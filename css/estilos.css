@@ -1,0 +1,137 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+    height: 50vh;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+  background: rgb(124, 95, 253);
+  background-size: auto 100vh;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  grid-gap: 1rem;
+}
+
+.lucas {  
+  margin: 56px;
+ width: 250px;
+ height: 250px;
+ text-align: center;
+ border-radius: 30%;
+
+}
+
+.portifolio {
+  font-size: 30px;
+  padding: 2em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.insta{
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  float: left;
+}
+
+.ebook{
+    width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  float: left;
+}
+.github {
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  float: left;
+  }
+
+.tele{
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  float: left;
+}
+
+
+.portifolio.grid{
+display: grid;
+grid-gap: :2em;
+text-align: center;
+
+
+}
+.portifolio figure{
+  text-align: center;
+
+}
+
+a {
+  text-decoration: none; 
+
+}
+
+a:hover{
+  text-decoration: underline
+}
+
+.linkados li{
+  text-align: start;
+  list-style: none;
+  font-size: 20px;
+  margin-top: 10px;
+    font-weight: bold;
+}
+.site-subtitle,
+.site-title{
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'Squada One', cursive;
+}
+
+.site-title {
+  padding: 0.3em;
+  font-size: 55px;
+}
+
+.site-subtitle{
+  font-style: italic;
+  font-size: 33px;
+  margin: 16px;
+  text-align: center;
+
+}
+
+.ufrj {
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+}
+
+.complementar {
+  text-align: initial;
+  list-style: none;
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.gridicons{
+ margin-top: 10px;
+}
