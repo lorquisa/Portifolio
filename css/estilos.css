@@ -21,15 +21,16 @@ body {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-  grid-gap: 1rem;
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fill, minmax(247px,4fr));
+    grid-gap: 2rem;
 }
 
 .lucas {  
   margin: 56px;
- width: 250px;
- height: 250px;
+ width: 300px;
+ height: 300px;
  text-align: center;
  border-radius: 30%;
 
@@ -38,7 +39,7 @@ body {
 .portifolio {
   font-size: 30px;
   padding: 2em;
-  text-align: center;
+  text-align: initial;
   margin-top: 10px;
 }
 
@@ -49,7 +50,7 @@ body {
   float: left;
 }
 
-.ebook{
+.pdfs{
     width: 60px;
   height: 60px;
   border-radius: 30%;
@@ -62,7 +63,7 @@ body {
   float: left;
   }
 
-.tele{
+.ux{
   width: 60px;
   height: 60px;
   border-radius: 30%;
@@ -74,17 +75,32 @@ body {
 display: grid;
 grid-gap: :2em;
 text-align: center;
-
-
 }
+
+.h2{
+  text-align: initial;
+}
+
+.mail {
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  float: left;
+  }
+
+  .linkedin {
+  width: 60px;
+  height: 60px;
+  border-radius: 10%;
+  float: left;
+  }
+
 .portifolio figure{
   text-align: center;
-
 }
 
 a {
   text-decoration: none; 
-
 }
 
 a:hover{
@@ -92,7 +108,8 @@ a:hover{
 }
 
 .linkados li{
-  text-align: start;
+  width: auto;
+  text-align: initial;
   list-style: none;
   font-size: 20px;
   margin-top: 10px;
@@ -124,14 +141,18 @@ a:hover{
   border-radius: 30%;
 }
 
-.complementar {
+.complementar { 
+  width:280px;
   text-align: initial;
   list-style: none;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .gridicons{
- margin-top: 10px;
-}
+  display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fill, minmax(104px,2fr));
+    grid-gap: 2rem;
+  }
