@@ -13,11 +13,14 @@ header {
 }
 
 body {
-  background: rgb(124, 95, 253);
   background-size: auto 100vh;
   font-family: 'Roboto', sans-serif;
   height: 100vh;
 
+}
+
+main{
+  background: linear-gradient(180deg, #6757a9, #403375);
 }
 
 .grid {
@@ -38,38 +41,21 @@ body {
 
 .portifolio {
   font-size: 30px;
-  padding: 2em;
+  padding: 2em 2em 0 2em;
   text-align: initial;
   margin-top: 10px;
 }
 
-.insta{
-  width: 60px;
-  height: 60px;
-  border-radius: 30%;
+.principais{
+  width: 200px;
+  height: 200px;
+  border-radius: 20%;
   float: left;
 }
-
-.pdfs{
-    width: 60px;
-  height: 60px;
-  border-radius: 30%;
-  float: left;
+.link {
+  font-size: 37px;
+ 
 }
-.github {
-  width: 60px;
-  height: 60px;
-  border-radius: 30%;
-  float: left;
-  }
-
-.ux{
-  width: 60px;
-  height: 60px;
-  border-radius: 30%;
-  float: left;
-}
-
 
 .portifolio.grid{
 display: grid;
@@ -78,21 +64,29 @@ text-align: center;
 }
 
 .h2{
-  text-align: initial;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.cont{
+  text-align: center;
+
 }
 
 .mail {
+  text-align: center;
+  margin: 0 0 -8px 0;
   width: 60px;
   height: 60px;
   border-radius: 30%;
-  float: left;
   }
 
   .linkedin {
+  text-align: center;
   width: 60px;
   height: 60px;
+  margin: 0 2em 2px 0;
   border-radius: 10%;
-  float: left;
   }
 
 .portifolio figure{
@@ -101,19 +95,26 @@ text-align: center;
 
 a {
   text-decoration: none; 
+  color: whitesmoke;
 }
 
 a:hover{
   text-decoration: underline
 }
 
+.caixa {
+  position: relative;
+  width: 940px;
+  margin: 0 auto;
+  }
+
 .linkados li{
-  width: auto;
-  text-align: initial;
+  text-align: center;
   list-style: none;
   font-size: 20px;
   margin-top: 10px;
-    font-weight: bold;
+  padding: 5px 0 5px 0;
+  font-weight: bold;
 }
 .site-subtitle,
 .site-title{
@@ -123,36 +124,125 @@ a:hover{
 }
 
 .site-title {
+  border-radius: 25px;
   padding: 0.3em;
-  font-size: 55px;
+  font-size: 75px;
 }
 
 .site-subtitle{
   font-style: italic;
-  font-size: 33px;
+  font-size: 53px;
   margin: 16px;
   text-align: center;
 
 }
 
-.ufrj {
-  width: 60px;
-  height: 60px;
-  border-radius: 30%;
-}
-
 .complementar { 
-  width:280px;
-  text-align: initial;
+  text-align: center;
   list-style: none;
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
 }
 
-.gridicons{
-  display: grid;
+  .complementar li {
+  padding: 5px 0 5px 0;
+  }
+
+  .gridicons{
+    display: grid;
     grid-auto-rows: min-content;
     grid-template-columns: repeat(auto-fill, minmax(104px,2fr));
     grid-gap: 2rem;
   }
+
+  .titulo {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+   padding: 20px 0 0 0;
+    margin:0 0 20px 0;
+  }
+
+  .ui {
+  width: 940px;
+  margin: 0 auto;
+  }
+
+  .ui li{
+    display: inline-block;
+    width: 49%;
+    font-size: 21px;
+    color: whitesmoke;
+  }
+  .ui img {
+    margin: 0 0 0.7em 5em;
+    display: block;
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+  }
+
+   .front li{
+    display: inline-block;
+    width: 48%;
+    font-size: 21px;
+    color: whitesmoke;
+   
+}
+
+  .front img{
+    margin: 0 0 0.7em 5em;
+    display: block;
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+  }
+
+  .itens li {
+    display: inline-block;
+    width: 24%;
+    text-align:center;
+  }
+
+  .subs {
+    font-size: 22px;
+    text-align: center;
+    color: whitesmoke;
+    padding: 0 0 20px 0;
+  }
+
+  .socialmidia img{
+    margin-top: 30px;
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+ }
+
+ .ferramentas li {
+  display: inline-block;
+  width: 16%;
+  text-align:center;
+ }
+
+ .ferramentas img{
+  margin-bottom: 30px;
+  width: 65px;
+  height: 65px;
+
+ }
+
+.contato {
+  font-size: 40px;
+  font-weight: bold;
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.back {
+  font-size: 30px;
+  padding-top: 5px;
+  text-align: center;
+}
