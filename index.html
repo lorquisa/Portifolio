@@ -8,6 +8,7 @@
 
   <!-- ========================================================= -->
   <!-- PIXEL DO META ADS: substitua SEU_PIXEL_ID_AQUI pelo seu ID -->
+  <!-- e remova as linhas de comentário para ativar              -->
   <!-- ========================================================= -->
   <!--
   <script>
@@ -26,22 +27,28 @@
 
   <style>
     :root {
-      --bg: #0b0d12;
-      --surface: #141822;
-      --surface-hover: #1c2231;
-      --border: #262e42;
-      --text: #f3f5f9;
-      --muted: #9aa4b8;
-      --accent: #7c5cff;
-      --accent-soft: rgba(124, 92, 255, 0.16);
-      --accent-hover: #9074ff;
+      --bg: #fffaf2;
+      --surface: #ffffff;
+      --text: #1b2432;
+      --muted: #5a6578;
+      --border: #eadfce;
+      --coral: #ff5a36;
+      --yellow: #ffbe0b;
+      --purple: #7c4dff;
+      --teal: #0ea5a4;
+      --shadow: 0 6px 18px rgba(27, 36, 50, 0.06);
+      --shadow-hover: 0 10px 24px rgba(27, 36, 50, 0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-      background: radial-gradient(circle at top, #171c2b 0%, var(--bg) 55%);
+      background:
+        radial-gradient(circle at 10% 5%, rgba(255, 190, 11, 0.22), transparent 35%),
+        radial-gradient(circle at 90% 10%, rgba(255, 90, 54, 0.16), transparent 35%),
+        radial-gradient(circle at 50% 95%, rgba(124, 77, 255, 0.12), transparent 40%),
+        var(--bg);
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -51,171 +58,275 @@
 
     .container {
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
     }
 
-    /* Cabeçalho */
     .profile {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
+    }
+
+    .avatar-wrap {
+      width: 106px;
+      height: 106px;
+      margin: 0 auto 12px;
+      padding: 4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--coral), var(--yellow), var(--purple));
     }
 
     .avatar {
-      width: 96px;
-      height: 96px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--accent);
-      background: var(--surface);
-      margin-bottom: 12px;
+      background: #fff;
+      display: block;
     }
 
     .profile h1 {
-      font-size: 1.35rem;
-      font-weight: 700;
+      font-size: 1.45rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
     }
 
     .handle {
-      color: var(--accent-hover);
+      display: inline-block;
+      color: var(--coral);
       font-size: 0.92rem;
-      font-weight: 600;
-      margin: 4px 0 8px;
+      font-weight: 700;
+      margin: 4px 0 10px;
     }
 
     .bio {
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       line-height: 1.45;
-      max-width: 380px;
+      max-width: 400px;
       margin: 0 auto;
     }
 
-    /* Abas */
-    .tabs {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
+    /* Mini-Mídia Kit (Números) */
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .stat-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text);
       background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 5px;
-      border-radius: 14px;
-      margin-bottom: 18px;
+      border: 1.5px solid var(--border);
+      padding: 5px 11px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
     }
 
-    .tab-btn {
-      background: transparent;
-      border: none;
+    /* Ícones Sociais */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 18px 0 24px;
+    }
+
+    .social-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+      border-color: var(--coral);
+      color: var(--coral);
+    }
+
+    .social-icon svg {
+      width: 21px;
+      height: 21px;
+      fill: currentColor;
+    }
+
+    /* Títulos de Seção */
+    .section-title {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--muted);
-      font-size: 0.84rem;
-      font-weight: 600;
-      padding: 10px 6px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.2s ease;
+      margin: 24px 0 12px 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .tab-btn.active {
-      background: var(--accent);
-      color: #fff;
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1.5px;
+      background: var(--border);
     }
 
-    .tab-panel {
-      display: none;
+    .list {
+      display: flex;
       flex-direction: column;
       gap: 12px;
-      animation: fadeIn 0.2s ease;
     }
 
-    .tab-panel.active {
-      display: flex;
+    /* Bento Grid 2 colunas para itens secundários */
+    .bento-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Cards / Botões */
     .card {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 14px;
       text-decoration: none;
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 14px;
       color: var(--text);
-      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
     .card:hover {
-      background: var(--surface-hover);
-      border-color: var(--accent);
       transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--coral);
     }
 
     .card.featured {
-      background: linear-gradient(135deg, rgba(124, 92, 255, 0.22), var(--surface));
-      border-color: var(--accent);
+      border: 2px solid var(--coral);
+      background: linear-gradient(135deg, #fff5f0 0%, #ffffff 65%);
+    }
+
+    .card.compact {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 14px;
+    }
+
+    .thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: #f4efe6;
+      position: relative;
+    }
+
+    .card.compact .thumb {
+      width: 42px;
+      height: 42px;
+      font-size: 1.25rem;
+    }
+
+    .thumb.coral { background: #ffe7e0; }
+    .thumb.yellow { background: #fff3cc; }
+    .thumb.purple { background: #ece7ff; }
+    .thumb.teal { background: #dff7f6; }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .card-body {
+      flex: 1;
+      min-width: 0;
     }
 
     .badge {
       display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 700;
+      font-size: 0.66rem;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #fff;
-      background: var(--accent);
-      padding: 3px 8px;
+      background: var(--coral);
+      padding: 2px 8px;
       border-radius: 999px;
-      margin-bottom: 8px;
-    }
-
-    .card-title {
-      font-size: 1rem;
-      font-weight: 700;
       margin-bottom: 4px;
     }
 
+    .badge.purple { background: var(--purple); }
+    .badge.teal { background: var(--teal); }
+
+    .card-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+
     .card-desc {
-      font-size: 0.84rem;
+      font-size: 0.81rem;
       color: var(--muted);
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
-    /* Redes no rodapé */
-    .socials {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
+    .arrow {
+      color: #b7ac9b;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding-left: 4px;
     }
 
-    .social-pill {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
+    /* Faixa de Marcas */
+    .brands-box {
       background: var(--surface);
-      transition: all 0.15s ease;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
     }
 
-    .social-pill:hover {
-      color: #fff;
-      border-color: var(--accent);
+    .brand-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      background: #f8f3ea;
+      padding: 6px 12px;
+      border-radius: 999px;
     }
 
     footer {
       text-align: center;
       color: var(--muted);
-      font-size: 0.75rem;
-      margin-top: 26px;
-      opacity: 0.75;
+      font-size: 0.76rem;
+      margin-top: 34px;
     }
   </style>
 </head>
@@ -223,109 +334,153 @@
   <main class="container">
     <!-- PERFIL -->
     <header class="profile">
-      <!-- Dica: suba uma foto 'perfil.jpg' na pasta img/ ou troque o src por um link -->
-      <img class="avatar" src="img/perfil.jpg" alt="Terça (@pqterca)" onerror="this.style.display='none'" />
+      <div class="avatar-wrap">
+        <img class="avatar" src="img/perfil.jpg" alt="Terça (@pqterca)" onerror="this.style.opacity='0'" />
+      </div>
       <h1>Terça • Lucas Orquisa</h1>
       <div class="handle">@pqterca</div>
       <p class="bio">
-        Professor de História no Ensino Médio Técnico • UFRJ • Pós ESPM.<br />
-        Didática prática, tecnologia educacional e planejamento sem burnout.
+        Professor, Comunicador e Criador Educacional • UFRJ • Pós ESPM.<br />
+        Descomplicando a sala de aula com didática prática e leveza.
       </p>
+
+      <!-- MINI-MÍDIA KIT -->
+      <div class="stats">
+        <span class="stat-pill">+14,2M views/ano</span>
+        <span class="stat-pill">45,7k no Instagram</span>
+        <span class="stat-pill">68% público 25–44 anos</span>
+      </div>
+
+      <!-- LOGOS REDES SOCIAIS -->
+      <div class="social-row">
+        <a class="social-icon" href="https://www.instagram.com/pqterca/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4 1.3-.1 1.6-.1 4.9-.1M12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1.2 4.9.1 5.8 0 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.2 2.2.5 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 2.9.5 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3-.1 2.2-.2 2.9-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.5-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.5-1.4-2.2-.7-.7-1.4-1.1-2.2-1.4-.8-.3-1.7-.5-2.9-.5C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.tiktok.com/@pqterca" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.4a6.33 6.33 0 0 0-.86-.06A6.34 6.34 0 0 0 3.14 15.7a6.34 6.34 0 0 0 10.86 4.43 6.28 6.28 0 0 0 1.82-4.43V8.76a8.18 8.18 0 0 0 4.77 1.52V6.84a4.84 4.84 0 0 1-1-.15z"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/@pqterca" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+        </a>
+        <a class="social-icon" href="https://api.whatsapp.com/message/7Y7UCISTAZKJI1?autoload=1&app_absent=0" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 0 0-8.48 15l-1.1 4 4.12-1.08A9.9 9.9 0 1 0 12.04 2zm5.77 14.03c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.01-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .9 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.75 1.24 1.61 2 1.11.99 2.04 1.3 2.33 1.44.29.15.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+        </a>
+      </div>
     </header>
 
-    <!-- NAVEGAÇÃO POR ABAS -->
-    <nav class="tabs" aria-label="Categorias">
-      <button class="tab-btn active" onclick="openTab('cursos', this)">Cursos & Aulas</button>
-      <button class="tab-btn" onclick="openTab('parcerias', this)">Parcerias</button>
-      <button class="tab-btn" onclick="openTab('b2b', this)">Comercial B2B</button>
-    </nav>
-
-    <!-- ABA 1: CURSOS & AULAS -->
-    <section id="cursos" class="tab-panel active">
-      <a class="card featured" href="SEU_LINK_PLANO_DE_AULA_AQUI" target="_blank" rel="noopener">
-        <span class="badge">Mais procurado</span>
-        <div class="card-title">O Plano de Aula Perfeito</div>
-        <div class="card-desc">Estruture uma semana inteira de aulas ativas alinhadas à BNCC sem levar trabalho para o fim de semana.</div>
+    <!-- SEÇÃO 1: CURSOS & MATERIAIS -->
+    <div class="section-title">Cursos & Materiais</div>
+    <div class="list">
+      <a class="card featured" href="https://lucasorquisa.hotmart.host/o-plano-de-aula-perfeito-f263736d-dc43-40c2-ad3d-53e7ab8fc40d" target="_blank" rel="noopener">
+        <div class="thumb coral">
+          📚
+          <img src="img/plano-de-aula.jpg" alt="" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <span class="badge">Mais procurado</span>
+          <div class="card-title">O Plano de Aula Perfeito</div>
+          <div class="card-desc">Aulas ativas alinhadas à BNCC sem levar trabalho para o fim de semana.</div>
+        </div>
+        <div class="arrow">›</div>
       </a>
 
-      <a class="card" href="SEU_LINK_ISCA_GRATUITA_AQUI" target="_blank" rel="noopener">
-        <div class="card-title">Checklist Gratuito de Planejamento 2027</div>
-        <div class="card-desc">Material gratuito para organizar sua rotina docente e seus projetos do semestre.</div>
+      <a class="card" href="https://docs.google.com/forms/d/e/1FAIpQLScagheWayjC3BFiTG1jR9kCVt49AJCqOEIUFjB4lM4c-fSomQ/viewform" target="_blank" rel="noopener">
+        <div class="thumb yellow">
+          📝
+          <img src="img/materiais.jpg" alt="" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Materiais Gratuitos & Lista de Espera</div>
+          <div class="card-desc">Cadastre-se para receber conteúdos, novidades e próximas turmas.</div>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+    </div>
+
+    <!-- SEÇÃO 2: PARCERIAS -->
+    <div class="section-title">Parcerias & Descontos</div>
+    <div class="list">
+      <a class="card" href="https://faculdadelib.com.br/influenciador/lucas-orquisa?utm_source=instagram&utm_medium=influencer&utm_campaign=lucas-orquisa" target="_blank" rel="noopener">
+        <div class="thumb purple">
+          🎓
+          <img src="img/libano.png" alt="Faculdade Líbano" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <span class="badge purple">Pós-Graduação</span>
+          <div class="card-title">Faculdade Líbano</div>
+          <div class="card-desc">Condição especial na Pós EAD para turbinar seu currículo docente.</div>
+        </div>
+        <div class="arrow">›</div>
       </a>
 
-      <a class="card" href="SEU_LINK_WORKSHOP_PORTFOLIO_AQUI" target="_blank" rel="noopener">
-        <div class="card-title">Workshop Portfólio Modular (Lista de Espera)</div>
-        <div class="card-desc">Aprenda a montar um portfólio pedagógico que passa na triagem de escolas e IES.</div>
-      </a>
-
-      <a class="card" href="SEU_LINK_AULAO_ENEM_AQUI" target="_blank" rel="noopener">
-        <div class="card-title">Aulão de História & Repertório ENEM</div>
-        <div class="card-desc">Revisão objetiva de História para vestibulandos e redação.</div>
-      </a>
-    </section>
-
-    <!-- ABA 2: PARCERIAS -->
-    <section id="parcerias" class="tab-panel">
       <a class="card" href="SEU_LINK_TEACHY_AQUI" target="_blank" rel="noopener">
-        <span class="badge">IA para Professores</span>
-        <div class="card-title">Teachy</div>
-        <div class="card-desc">Crie atividades, provas e planos de aula com inteligência artificial em minutos.</div>
-      </a>
-
-      <a class="card" href="SEU_LINK_LIBANO_AQUI" target="_blank" rel="noopener">
-        <span class="badge">Pós-Graduação</span>
-        <div class="card-title">Faculdade Líbano</div>
-        <div class="card-desc">Condição especial na Pós-Graduação EAD para turbinar seu currículo e pontuação docente.</div>
+        <div class="thumb teal">
+          🤖
+          <img src="img/teachy.png" alt="Teachy" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <span class="badge teal">IA para Professores</span>
+          <div class="card-title">Teachy</div>
+          <div class="card-desc">Crie atividades, provas e planos de aula com IA em minutos.</div>
+        </div>
+        <div class="arrow">›</div>
       </a>
 
       <a class="card" href="SEU_LINK_ESCOLA_DE_ESCRITA_AQUI" target="_blank" rel="noopener">
-        <span class="badge">Escrita & Redação</span>
-        <div class="card-title">Escola de Escrita</div>
-        <div class="card-desc">Aprimore sua escrita acadêmica, criativa e argumentativa com método.</div>
+        <div class="thumb yellow">
+          ✍️
+          <img src="img/escola-escrita.png" alt="Escola de Escrita" onerror="this.style.display='none'" />
+        </div>
+        <div class="card-body">
+          <div class="card-title">Escola de Escrita</div>
+          <div class="card-desc">Aprimore sua escrita acadêmica, criativa e argumentativa com método.</div>
+        </div>
+        <div class="arrow">›</div>
       </a>
-    </section>
+    </div>
 
-    <!-- ABA 3: COMERCIAL & B2B -->
-    <section id="b2b" class="tab-panel">
-      <a class="card featured" href="SEU_LINK_MIDIA_KIT_AQUI" target="_blank" rel="noopener">
-        <span class="badge">+14,2M views/ano</span>
+    <!-- SEÇÃO 3: MARCAS COM QUEM TRABALHEI -->
+    <div class="section-title">Marcas & Instituições</div>
+    <div class="brands-box">
+      <span class="brand-tag">ESPM</span>
+      <span class="brand-tag">Nestlé / Nescau</span>
+      <span class="brand-tag">iFood</span>
+      <span class="brand-tag">Uber</span>
+      <span class="brand-tag">Teachy</span>
+      <span class="brand-tag">Faculdade Líbano</span>
+      <span class="brand-tag">UFABC</span>
+      <span class="brand-tag">World Creativity Day</span>
+    </div>
+
+    <!-- SEÇÃO 4: COMERCIAL & ACADÊMICO (BENTO 2x2) -->
+    <div class="section-title">Comercial, Palestras & Acadêmico</div>
+    <div class="bento-2">
+      <a class="card compact" href="midia-kit-2027.pdf" target="_blank" rel="noopener">
+        <div class="thumb coral">📊</div>
         <div class="card-title">Mídia Kit 2027</div>
-        <div class="card-desc">Métricas auditadas, cases (ESPM, iFood, Uber) e formatos para marcas e EdTechs.</div>
+        <div class="card-desc">Cases, métricas e formatos B2B.</div>
       </a>
 
-      <a class="card" href="mailto:lucasorquisa@gmail.com?subject=Parceria%20ou%20Palestra%20-%20%40pqterca">
-        <div class="card-title">Palestras, Semanas Pedagógicas & Publis</div>
-        <div class="card-desc">Contato comercial direto por e-mail: lucasorquisa@gmail.com</div>
+      <a class="card compact" href="https://api.whatsapp.com/message/7Y7UCISTAZKJI1?autoload=1&app_absent=0" target="_blank" rel="noopener">
+        <div class="thumb teal">💬</div>
+        <div class="card-title">WhatsApp B2B</div>
+        <div class="card-desc">Publis, palestras e eventos.</div>
       </a>
 
-      <a class="card" href="SEU_LINK_LINKEDIN_AQUI" target="_blank" rel="noopener">
+      <a class="card compact" href="SEU_LINK_LINKEDIN_AQUI" target="_blank" rel="noopener">
+        <div class="thumb purple">💼</div>
         <div class="card-title">LinkedIn</div>
-        <div class="card-desc">Trajetória em Educação, Audiovisual, Design Instrucional e Comunicação.</div>
+        <div class="card-desc">Carreira, LXD e Educação.</div>
       </a>
 
-      <a class="card" href="SEU_LINK_LATTES_AQUI" target="_blank" rel="noopener">
-        <div class="card-title">Currículo Lattes (CNPq)</div>
-        <div class="card-desc">Formação acadêmica, pesquisas e projetos de extensão.</div>
+      <a class="card compact" href="http://lattes.cnpq.br/1403836507676666" target="_blank" rel="noopener">
+        <div class="thumb yellow">🏛️</div>
+        <div class="card-title">Currículo Lattes</div>
+        <div class="card-desc">Pesquisa e formação CNPq.</div>
       </a>
-    </section>
-
-    <!-- REDES SOCIAIS -->
-    <div class="socials">
-      <a class="social-pill" href="https://www.instagram.com/pqterca/" target="_blank" rel="noopener">Instagram</a>
-      <a class="social-pill" href="https://www.tiktok.com/@pqterca" target="_blank" rel="noopener">TikTok</a>
-      <a class="social-pill" href="https://www.youtube.com/@pqterca" target="_blank" rel="noopener">YouTube</a>
     </div>
 
     <footer>© 2027 • Terça (@pqterca) — Lucas Orquisa Pereira</footer>
   </main>
-
-  <script>
-    function openTab(tabId, btn) {
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      btn.classList.add('active');
-    }
-  </script>
 </body>
 </html>
