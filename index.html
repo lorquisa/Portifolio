@@ -1,69 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Lucas Orquisa</title>
-	<link rel="stylesheet" href="css/estilos.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Squada+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terça (@pqterca) | Lucas Orquisa — Educação, Cursos & Parcerias</title>
+  <meta name="description" content="Hub oficial do Terça (@pqterca) — Lucas Orquisa Pereira. Cursos para professores, materiais didáticos, parcerias e contato B2B." />
+
+  <!-- ========================================================= -->
+  <!-- PIXEL DO META ADS: substitua SEU_PIXEL_ID_AQUI pelo seu ID -->
+  <!-- ========================================================= -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_ID_AQUI');
+    fbq('track', 'PageView');
+  </script>
+  -->
+
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --surface: #141822;
+      --surface-hover: #1c2231;
+      --border: #262e42;
+      --text: #f3f5f9;
+      --muted: #9aa4b8;
+      --accent: #7c5cff;
+      --accent-soft: rgba(124, 92, 255, 0.16);
+      --accent-hover: #9074ff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: radial-gradient(circle at top, #171c2b 0%, var(--bg) 55%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 36px 16px 56px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* Cabeçalho */
+    .profile {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      background: var(--surface);
+      margin-bottom: 12px;
+    }
+
+    .profile h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .handle {
+      color: var(--accent-hover);
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin: 4px 0 8px;
+    }
+
+    .bio {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    /* Abas */
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 5px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 10px 6px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .tab-panel {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .tab-panel.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards / Botões */
+    .card {
+      display: block;
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      color: var(--text);
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card:hover {
+      background: var(--surface-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .card.featured {
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.22), var(--surface));
+      border-color: var(--accent);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fff;
+      background: var(--accent);
+      padding: 3px 8px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Redes no rodapé */
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .social-pill {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: all 0.15s ease;
+    }
+
+    .social-pill:hover {
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 26px;
+      opacity: 0.75;
+    }
+  </style>
 </head>
 <body>
-	<main>
-	<header>
-		<div>
-			<h1 class="site-title"> Lucas Orquisa Pereira </h1>
-			<h2 class="site-subtitle">Professor, comunicador e historiador </h2> 
-		</div>	
-	</header>
-	<figure style="text-align: center;">
-			<img class="lucas" src="./img/lucas.jpg" alt="lucas">
-			</figure>
-	<section class="portifolio">
+  <main class="container">
+    <!-- PERFIL -->
+    <header class="profile">
+      <!-- Dica: suba uma foto 'perfil.jpg' na pasta img/ ou troque o src por um link -->
+      <img class="avatar" src="img/perfil.jpg" alt="Terça (@pqterca)" onerror="this.style.display='none'" />
+      <h1>Terça • Lucas Orquisa</h1>
+      <div class="handle">@pqterca</div>
+      <p class="bio">
+        Professor de História no Ensino Médio Técnico • UFRJ • Pós ESPM.<br />
+        Didática prática, tecnologia educacional e planejamento sem burnout.
+      </p>
+    </header>
 
-	<div class="grid">
-		<div>
-			 <a class="link" href="projetos.html"><img class="principais" src="./img/project.png" alt="ux">
-		<figcaption style=" margin: 0.4em 1em">Projetos</a></figcaption>
-		</figure>
-	</div>
-		
-	<div>
-		<a class="link" style="padding-left: 20px;" href="https://www.instagram.com/historiatopia/"><img class="principais"src="./img/historiatopia.jpg" alt="historiatopia">Portifolio educacional</a>
-	</div>
-		<div> 
-		<figcaption"><a class="link" style="padding-left: 45px;" href="https://github.com/lorquisa?tab=repositories"><img class="principais" src="./img/github.png" alt="github">Github</a></figcaption>
-	</div>
-	<div> <a class="link" style="padding-left: 50px;"  href="https://drive.google.com/file/d/1rIuidQK3msewC9SARqPeI0971JsDfg8r/view?usp=sharing"><img class="principais" src="./img/ebook.png" alt="pdfs">
-		<figcaption> Ebook</a></figcaption>
-	</div>
-		
-</div>
-<h2 style="color: whitesmoke; padding: 20px 10px 20px 0px; text-align: center;">  
-	Experiências: </h2>
-	<ul class="linkados">
-		<li> Vencedor do <a href= "https://www.cafehistoria.com.br/hackathonufrj/"> Hackathon UFRJ</a> (2017) </li>
-		<li> 6 meses como Produtor Criativo na Idapt (2019)</li>
-		<li> Roteirista no <a href="https://www.youtube.com/watch?v=tgBwx5Us5W0">Laboratorio de Inovação Cidadã</a> (2017)</li>
-		<li> 6 meses em Especialista de Costumer Sucess na Estante Mágica (2018)</li>
-		<li> 2 anos como Professor e Coordenador no <a href="https://www.facebook.com/purubemalves/?__tn__=%2Cd%2CP-R&eid=ARBppOJtnuHMbHiUARXkCU-s0efeAZdg6sRHE4qy8BY72nSFm9NnVciz0lpiJRekX7ihIpBmm_DbEgni">Pré-Vestibular Rubem Alves</a> (2017 a 2019)</li>	
-</ul>
+    <!-- NAVEGAÇÃO POR ABAS -->
+    <nav class="tabs" aria-label="Categorias">
+      <button class="tab-btn active" onclick="openTab('cursos', this)">Cursos & Aulas</button>
+      <button class="tab-btn" onclick="openTab('parcerias', this)">Parcerias</button>
+      <button class="tab-btn" onclick="openTab('b2b', this)">Comercial B2B</button>
+    </nav>
 
-<h2 style="
-    color: whitesmoke;margin-top: 0.4em;margin-bottom: 0.4em; text-align: center;"> Estudos: </h2>	
-    <ul class="complementar">
-    	<li>UX/UI Design - Alura</li>
-    	<li> Licenciatura em História pela UFRJ </li>
-		<li>Programador em Javascript/HTML/CSS - Alura</li>
-    </ul>
-    <p class="contato">Contato:</p>
-    	<ul class="cont">
-    		<li style="display: inline-block;"><a href="https://www.linkedin.com/in/lucas-orquisa-pereira-6957ab140/"><img class="linkedin" src="./img/linkedin.png" alt="linkedin"></a></li>
-    		<li style="display: inline-block;"><a href="mailto:lorquisa@hotmail.com"><img class="mail" src="./img/mail.png" alt="mail"></a></li>
-    	</ul>
-				
-			
-		
-  </section>
-</main>
+    <!-- ABA 1: CURSOS & AULAS -->
+    <section id="cursos" class="tab-panel active">
+      <a class="card featured" href="SEU_LINK_PLANO_DE_AULA_AQUI" target="_blank" rel="noopener">
+        <span class="badge">Mais procurado</span>
+        <div class="card-title">O Plano de Aula Perfeito</div>
+        <div class="card-desc">Estruture uma semana inteira de aulas ativas alinhadas à BNCC sem levar trabalho para o fim de semana.</div>
+      </a>
+
+      <a class="card" href="SEU_LINK_ISCA_GRATUITA_AQUI" target="_blank" rel="noopener">
+        <div class="card-title">Checklist Gratuito de Planejamento 2027</div>
+        <div class="card-desc">Material gratuito para organizar sua rotina docente e seus projetos do semestre.</div>
+      </a>
+
+      <a class="card" href="SEU_LINK_WORKSHOP_PORTFOLIO_AQUI" target="_blank" rel="noopener">
+        <div class="card-title">Workshop Portfólio Modular (Lista de Espera)</div>
+        <div class="card-desc">Aprenda a montar um portfólio pedagógico que passa na triagem de escolas e IES.</div>
+      </a>
+
+      <a class="card" href="SEU_LINK_AULAO_ENEM_AQUI" target="_blank" rel="noopener">
+        <div class="card-title">Aulão de História & Repertório ENEM</div>
+        <div class="card-desc">Revisão objetiva de História para vestibulandos e redação.</div>
+      </a>
+    </section>
+
+    <!-- ABA 2: PARCERIAS -->
+    <section id="parcerias" class="tab-panel">
+      <a class="card" href="SEU_LINK_TEACHY_AQUI" target="_blank" rel="noopener">
+        <span class="badge">IA para Professores</span>
+        <div class="card-title">Teachy</div>
+        <div class="card-desc">Crie atividades, provas e planos de aula com inteligência artificial em minutos.</div>
+      </a>
+
+      <a class="card" href="SEU_LINK_LIBANO_AQUI" target="_blank" rel="noopener">
+        <span class="badge">Pós-Graduação</span>
+        <div class="card-title">Faculdade Líbano</div>
+        <div class="card-desc">Condição especial na Pós-Graduação EAD para turbinar seu currículo e pontuação docente.</div>
+      </a>
+
+      <a class="card" href="SEU_LINK_ESCOLA_DE_ESCRITA_AQUI" target="_blank" rel="noopener">
+        <span class="badge">Escrita & Redação</span>
+        <div class="card-title">Escola de Escrita</div>
+        <div class="card-desc">Aprimore sua escrita acadêmica, criativa e argumentativa com método.</div>
+      </a>
+    </section>
+
+    <!-- ABA 3: COMERCIAL & B2B -->
+    <section id="b2b" class="tab-panel">
+      <a class="card featured" href="SEU_LINK_MIDIA_KIT_AQUI" target="_blank" rel="noopener">
+        <span class="badge">+14,2M views/ano</span>
+        <div class="card-title">Mídia Kit 2027</div>
+        <div class="card-desc">Métricas auditadas, cases (ESPM, iFood, Uber) e formatos para marcas e EdTechs.</div>
+      </a>
+
+      <a class="card" href="mailto:lucasorquisa@gmail.com?subject=Parceria%20ou%20Palestra%20-%20%40pqterca">
+        <div class="card-title">Palestras, Semanas Pedagógicas & Publis</div>
+        <div class="card-desc">Contato comercial direto por e-mail: lucasorquisa@gmail.com</div>
+      </a>
+
+      <a class="card" href="SEU_LINK_LINKEDIN_AQUI" target="_blank" rel="noopener">
+        <div class="card-title">LinkedIn</div>
+        <div class="card-desc">Trajetória em Educação, Audiovisual, Design Instrucional e Comunicação.</div>
+      </a>
+
+      <a class="card" href="SEU_LINK_LATTES_AQUI" target="_blank" rel="noopener">
+        <div class="card-title">Currículo Lattes (CNPq)</div>
+        <div class="card-desc">Formação acadêmica, pesquisas e projetos de extensão.</div>
+      </a>
+    </section>
+
+    <!-- REDES SOCIAIS -->
+    <div class="socials">
+      <a class="social-pill" href="https://www.instagram.com/pqterca/" target="_blank" rel="noopener">Instagram</a>
+      <a class="social-pill" href="https://www.tiktok.com/@pqterca" target="_blank" rel="noopener">TikTok</a>
+      <a class="social-pill" href="https://www.youtube.com/@pqterca" target="_blank" rel="noopener">YouTube</a>
+    </div>
+
+    <footer>© 2027 • Terça (@pqterca) — Lucas Orquisa Pereira</footer>
+  </main>
+
+  <script>
+    function openTab(tabId, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
 </body>
-	</html>
+</html>
