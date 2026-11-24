@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terça (@pqterca) | Lucas Orquisa — Educação, Cursos & Parcerias</title>
-  <meta name="description" content="Hub oficial do Terça (@pqterca) — Lucas Orquisa Pereira. Cursos para professores, materiais didáticos, parcerias e contato B2B." />
+  <title>Terça (@pqterca) — Educação, Cursos & Parcerias</title>
+  <meta name="description" content="Hub oficial do Terça (@pqterca). Cursos para professores, materiais didáticos, parcerias e contato comercial." />
+  <link rel="icon" type="image/jpeg" href="img/perfil.jpg" />
 
   <!-- ========================================================= -->
-  <!-- PIXEL DO META ADS: substitua SEU_PIXEL_ID_AQUI pelo seu ID -->
-  <!-- e remova as linhas de comentário para ativar              -->
+  <!-- VERIFICAÇÃO DE DOMÍNIO + PIXEL DO META ADS                -->
+  <!-- Cole aqui a meta-tag e ative o script na conversa Frente 4 -->
   <!-- ========================================================= -->
   <!--
+  <meta name="facebook-domain-verification" content="SEU_CODIGO_AQUI" />
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -53,7 +55,7 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 36px 16px 56px;
+      padding: 36px 16px 48px;
     }
 
     .container {
@@ -85,7 +87,7 @@
     }
 
     .profile h1 {
-      font-size: 1.45rem;
+      font-size: 1.5rem;
       font-weight: 800;
       letter-spacing: -0.02em;
     }
@@ -106,7 +108,7 @@
       margin: 0 auto;
     }
 
-    /* Mini-Mídia Kit (Números) */
+    /* Números-Chave */
     .stats {
       display: flex;
       justify-content: center;
@@ -116,12 +118,12 @@
     }
 
     .stat-pill {
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       font-weight: 700;
       color: var(--text);
       background: var(--surface);
       border: 1.5px solid var(--border);
-      padding: 5px 11px;
+      padding: 5px 12px;
       border-radius: 999px;
       box-shadow: var(--shadow);
     }
@@ -187,7 +189,7 @@
       gap: 12px;
     }
 
-    /* Bento Grid 2 colunas para itens secundários */
+    /* Bento Grid 2 colunas */
     .bento-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -300,33 +302,71 @@
       padding-left: 4px;
     }
 
-    /* Faixa de Marcas */
-    .brands-box {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 14px;
-      box-shadow: var(--shadow);
+    /* Linha Final de Marcas (Círculos Pequenos) */
+    .brands-strip {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1.5px solid var(--border);
+      text-align: center;
+    }
+
+    .brands-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .brands-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .brand-tag {
-      font-size: 0.78rem;
-      font-weight: 700;
+    .brand-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+      background: #fff;
+    }
+
+    .brand-circle span {
+      position: absolute;
+      font-size: 0.54rem;
+      font-weight: 800;
       color: var(--muted);
-      background: #f8f3ea;
-      padding: 6px 12px;
-      border-radius: 999px;
+      text-align: center;
+      line-height: 1.05;
+      padding: 2px;
+      z-index: 1;
     }
 
     footer {
       text-align: center;
       color: var(--muted);
-      font-size: 0.76rem;
-      margin-top: 34px;
+      font-size: 0.74rem;
+      margin-top: 24px;
+      opacity: 0.8;
     }
   </style>
 </head>
@@ -337,33 +377,36 @@
       <div class="avatar-wrap">
         <img class="avatar" src="img/perfil.jpg" alt="Terça (@pqterca)" onerror="this.style.opacity='0'" />
       </div>
-      <h1>Terça • Lucas Orquisa</h1>
+      <h1>Terça</h1>
       <div class="handle">@pqterca</div>
       <p class="bio">
         Professor, Comunicador e Criador Educacional • UFRJ • Pós ESPM.<br />
         Descomplicando a sala de aula com didática prática e leveza.
       </p>
 
-      <!-- MINI-MÍDIA KIT -->
+      <!-- NÚMEROS-CHAVE -->
       <div class="stats">
+        <span class="stat-pill">35k no Instagram</span>
         <span class="stat-pill">+14,2M views/ano</span>
-        <span class="stat-pill">45,7k no Instagram</span>
-        <span class="stat-pill">68% público 25–44 anos</span>
       </div>
 
       <!-- LOGOS REDES SOCIAIS -->
       <div class="social-row">
+        <!-- Instagram -->
         <a class="social-icon" href="https://www.instagram.com/pqterca/" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4 1.3-.1 1.6-.1 4.9-.1M12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1.2 4.9.1 5.8 0 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.2 2.2.5 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 2.9.5 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3-.1 2.2-.2 2.9-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.5-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.5-1.4-2.2-.7-.7-1.4-1.1-2.2-1.4-.8-.3-1.7-.5-2.9-.5C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
         </a>
+        <!-- TikTok -->
         <a class="social-icon" href="https://www.tiktok.com/@pqterca" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.4a6.33 6.33 0 0 0-.86-.06A6.34 6.34 0 0 0 3.14 15.7a6.34 6.34 0 0 0 10.86 4.43 6.28 6.28 0 0 0 1.82-4.43V8.76a8.18 8.18 0 0 0 4.77 1.52V6.84a4.84 4.84 0 0 1-1-.15z"/></svg>
         </a>
+        <!-- YouTube -->
         <a class="social-icon" href="https://www.youtube.com/@pqterca" target="_blank" rel="noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
         </a>
-        <a class="social-icon" href="https://api.whatsapp.com/message/7Y7UCISTAZKJI1?autoload=1&app_absent=0" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 0 0-8.48 15l-1.1 4 4.12-1.08A9.9 9.9 0 1 0 12.04 2zm5.77 14.03c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.01-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .9 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.75 1.24 1.61 2 1.11.99 2.04 1.3 2.33 1.44.29.15.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+        <!-- E-mail Comercial -->
+        <a class="social-icon" href="mailto:lucasorquisa@gmail.com?subject=Contato%20Comercial%20-%20%40pqterca" aria-label="E-mail Comercial">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
       </div>
     </header>
@@ -406,9 +449,9 @@
           <img src="img/libano.png" alt="Faculdade Líbano" onerror="this.style.display='none'" />
         </div>
         <div class="card-body">
-          <span class="badge purple">Pós-Graduação</span>
+          <span class="badge purple">3 Pós pelo preço de 1</span>
           <div class="card-title">Faculdade Líbano</div>
-          <div class="card-desc">Condição especial na Pós EAD para turbinar seu currículo docente.</div>
+          <div class="card-desc">Faça 3 pós-graduações EAD pelo preço de uma usando meu link oficial.</div>
         </div>
         <div class="arrow">›</div>
       </a>
@@ -419,9 +462,9 @@
           <img src="img/teachy.png" alt="Teachy" onerror="this.style.display='none'" />
         </div>
         <div class="card-body">
-          <span class="badge teal">IA para Professores</span>
+          <span class="badge teal">10% OFF na assinatura</span>
           <div class="card-title">Teachy</div>
-          <div class="card-desc">Crie atividades, provas e planos de aula com IA em minutos.</div>
+          <div class="card-desc">Garanta 10% de desconto na assinatura pelo meu link e crie aulas com IA em minutos.</div>
         </div>
         <div class="arrow">›</div>
       </a>
@@ -439,20 +482,7 @@
       </a>
     </div>
 
-    <!-- SEÇÃO 3: MARCAS COM QUEM TRABALHEI -->
-    <div class="section-title">Marcas & Instituições</div>
-    <div class="brands-box">
-      <span class="brand-tag">ESPM</span>
-      <span class="brand-tag">Nestlé / Nescau</span>
-      <span class="brand-tag">iFood</span>
-      <span class="brand-tag">Uber</span>
-      <span class="brand-tag">Teachy</span>
-      <span class="brand-tag">Faculdade Líbano</span>
-      <span class="brand-tag">UFABC</span>
-      <span class="brand-tag">World Creativity Day</span>
-    </div>
-
-    <!-- SEÇÃO 4: COMERCIAL & ACADÊMICO (BENTO 2x2) -->
+    <!-- SEÇÃO 3: COMERCIAL & ACADÊMICO (BENTO 2x2) -->
     <div class="section-title">Comercial, Palestras & Acadêmico</div>
     <div class="bento-2">
       <a class="card compact" href="midia-kit-2027.pdf" target="_blank" rel="noopener">
@@ -461,10 +491,10 @@
         <div class="card-desc">Cases, métricas e formatos B2B.</div>
       </a>
 
-      <a class="card compact" href="https://api.whatsapp.com/message/7Y7UCISTAZKJI1?autoload=1&app_absent=0" target="_blank" rel="noopener">
-        <div class="thumb teal">💬</div>
-        <div class="card-title">WhatsApp B2B</div>
-        <div class="card-desc">Publis, palestras e eventos.</div>
+      <a class="card compact" href="mailto:lucasorquisa@gmail.com?subject=Parceria%20ou%20Palestra%20-%20%40pqterca">
+        <div class="thumb teal">✉️</div>
+        <div class="card-title">E-mail Comercial</div>
+        <div class="card-desc">lucasorquisa@gmail.com</div>
       </a>
 
       <a class="card compact" href="SEU_LINK_LINKEDIN_AQUI" target="_blank" rel="noopener">
@@ -480,7 +510,50 @@
       </a>
     </div>
 
-    <footer>© 2027 • Terça (@pqterca) — Lucas Orquisa Pereira</footer>
+    <!-- LINHA FINAL: MARCAS & INSTITUIÇÕES -->
+    <section class="brands-strip" aria-label="Marcas e Instituições">
+      <div class="brands-label">Marcas & Instituições</div>
+      <div class="brands-row">
+        <div class="brand-circle" title="ESPM">
+          <span>ESPM</span>
+          <img src="img/logo-espm.png" alt="ESPM" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-circle" title="Nestlé / Nescau">
+          <span>Nescau</span>
+          <img src="img/logo-nescau.png" alt="Nestlé / Nescau" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-circle" title="iFood">
+          <span>iFood</span>
+          <img src="img/logo-ifood.png" alt="iFood" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-circle" title="Uber">
+          <span>Uber</span>
+          <img src="img/logo-uber.png" alt="Uber" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-circle" title="Teachy">
+          <span>Teachy</span>
+          <img src="img/teachy.png" alt="Teachy" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-circle" title="Faculdade Líbano">
+          <span>Líbano</span>
+          <img src="img/libano.png" alt="Faculdade Líbano" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-circle" title="UFRJ">
+          <span>UFRJ</span>
+          <img src="img/logo-ufrj.png" alt="UFRJ" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-circle" title="UNIFESP">
+          <span>UNIFESP</span>
+          <img src="img/logo-unifesp.png" alt="UNIFESP" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-circle" title="UFABC">
+          <span>UFABC</span>
+          <img src="img/logo-ufabc.png" alt="UFABC" onerror="this.style.display='none'" />
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2027 • Terça (@pqterca)</footer>
   </main>
 </body>
 </html>
